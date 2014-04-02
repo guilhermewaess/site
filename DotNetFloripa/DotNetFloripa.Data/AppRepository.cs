@@ -2,6 +2,7 @@
 using DotNetFloripa.Model.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,8 @@ namespace DotNetFloripa.Data
 
         public void SaveJob(Job job)
         {
-            _db.Jobs.Add(job);
+            if (job.Id == 0){ _db.Jobs.Add(job);}
+            if(job.Id != 0){ _db.Entry(job).State = EntityState.Modified;}
             _db.SaveChanges();
         }
     }

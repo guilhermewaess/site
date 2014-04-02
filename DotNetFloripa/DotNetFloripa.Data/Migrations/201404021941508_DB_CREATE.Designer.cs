@@ -13,7 +13,7 @@ namespace DotNetFloripa.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201404021141219_DB_CREATE"; }
+            get { return "201404021941508_DB_CREATE"; }
         }
         
         string IMigrationMetadata.Source
